@@ -46,3 +46,19 @@ def two_sides_angle():      #Input triangle with 2 sides and an angle
 	number_validator(angle)
 	angle = float(t)
 	return side_1, side_2, angle
+
+def base_height():      #Working out rectangle, area of parallelogram, triangle 
+	base = input("Enter the base: ")
+	number_validator(base)
+	base = float(t)
+
+	height = input("Enter the height: ")
+	number_validator(height)
+	height = float(t)
+	return base, height
+	
+def radius():       #Working out circle
+	radius = input("Enter the radius: ")
+	number_validator(radius)
+	radius = float(t)
+	return radius
