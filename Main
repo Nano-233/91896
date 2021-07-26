@@ -17,3 +17,32 @@ def number_validator(x):  #checks if input is a float
 	except:
 		t = input("please enter a number: ")
 		number_validator(t)
+		
+def three_sides():      #input triangle with 3 sides
+	side_1 = input("Enter the first side: ")
+	number_validator(side_1)
+	side_1 = float(t)
+
+	side_2 = input("Enter the second side: ")
+	number_validator(side_2)
+	side_2 = float(t)
+
+	side_3 = input("Enter the third side: ")
+	number_validator(side_3)
+	side_3 = float(t)
+
+	return side_1, side_2, side_3
+	
+def two_sides_angle():      #Input triangle with 2 sides and an angle
+	side_1 = input("Enter the first side: ")
+	number_validator(side_1)
+	side_1 = float(t)
+
+	side_2 = input("Enter the second side: ")
+	number_validator(side_2)
+	side_2 = float(t)
+
+	angle = input("Enter the angle between the two sides: ")
+	number_validator(angle)
+	angle = float(t)
+	return side_1, side_2, angle
