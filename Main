@@ -62,3 +62,18 @@ def radius():       #Working out circle
 	number_validator(radius)
 	radius = float(t)
 	return radius
+
+def adjacent_sides(): #Works out the area and perimeter of parallelograms
+	base = input("Enter the base: ")
+	number_validator(base)
+	base = float(t)
+
+	height = input("Enter the height: ")
+	number_validator(height)
+	height = float(t)
+
+	side_1 = input("Enter the slant: ")
+	number_validator(side_1)
+	side_1 = float(t)
+
+	return base, side_1, height
