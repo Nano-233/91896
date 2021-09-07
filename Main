@@ -110,3 +110,34 @@ while yesno == "y":
 			area = round((run*run_1/2), 2)
 			print("The area is", area, unit,"\u00b2")
 			shape_list["Triangle_area", n] = area, unit
+
+		elif ask == "2": #Asks user for 2 sides and angle in between to work out area + perimetre
+			run, run_1, run_2 = two_sides_angle()
+			try:
+				if run_2 >= 180:
+					int("error")
+				c = math.sqrt((run**2) + (run_1**2) - (2*run*run_1*math.cos(run_2*(math.pi)/180)))
+				p = (run + run_1 + c)/2
+				area = round(0.5*run*run_1*math.sin(run_2/360*(math.pi*2)), 2)
+				perimetre = round(c + run + run_1, 2)
+				print("The area is", area, unit,"\u00b2")
+				print("The perimeter is", perimetre, unit)
+				shape_list["Triangle_Area", n] = area, unit
+				shape_list["Triangle_Perimetre", n] = perimetre, unit					
+			except:
+				print("Invalid angle")
+					
+
+		elif ask == "3":  #Asks user for all 3 sides to work out area + perimetre
+			run, run_1, run_2 = three_sides()
+
+			try:
+				p = (run + run_1 + run_2)/2
+				area = round((math.sqrt(p*(p-run)*(p-run_1)*(p-run_2))), 2)
+				print("The area is", area, unit,"\u00b2")
+				shape_list["Triangle_Area", n] = area, unit
+				perimetre = run + run_1 + run_2
+				print("The perimeter is", perimetre, unit)
+
+			except:
+				print("Triangle is invalid")
