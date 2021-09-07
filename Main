@@ -160,3 +160,26 @@ while yesno == "y":
 		perimetre = round(math.pi*2*run, 2)
 		print("The diameter is", perimetre, unit)
 		shape_list["Circle Perimeter", n] = perimetre, unit
+
+	elif shape == "4":   #Asks user for both sides + height to work out area and perimetre
+		run, run_1, run_2 = adjacent_sides()
+		if run_2 > run_1:
+			print("Invalid parallelogram\n")
+
+		else:  
+			perimetre = round(run*2 + run_1*2, 2)
+			print("The Perimeter is: ", perimetre, unit)
+			shape_list["Parallelogram Perimeter", n] = perimetre, unit
+
+			area = round(run*run_2, 2)
+			print("The Area is", area, unit,"\u00b2")
+			shape_list["Parallelogram Area", n] = area, unit
+
+	yesno = input("Run calculator? y/n: ")
+	yesno = yesno.lower()
+	while yesno not in yn:
+		yesno = input("Invalid input, try again: ")
+		yesno = yesno.lower()
+
+	n = n + 1
+print(shape_list)   
