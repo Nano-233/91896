@@ -17,8 +17,8 @@ def number_validator(x):  #checks if input is a float
 	except:
 		t = input("please enter a number: ")
 		number_validator(t)
-		
-def three_sides():      #input triangle with 3 sides
+
+def three_sides():      #Working out area and perimeter of triangle with 3 known sides
 	side_1 = input("Enter the first side: ")
 	number_validator(side_1)
 	side_1 = float(t)
@@ -32,8 +32,8 @@ def three_sides():      #input triangle with 3 sides
 	side_3 = float(t)
 
 	return side_1, side_2, side_3
-	
-def two_sides_angle():      #Input triangle with 2 sides and an angle
+
+def two_sides_angle():      #Working out area and perimeter of triangle with 2 known sides and angle in between
 	side_1 = input("Enter the first side: ")
 	number_validator(side_1)
 	side_1 = float(t)
@@ -47,7 +47,7 @@ def two_sides_angle():      #Input triangle with 2 sides and an angle
 	angle = float(t)
 	return side_1, side_2, angle
 
-def base_height():      #Working out rectangle, area of parallelogram, triangle 
+def base_height():      #Working out rectangle , triangle 
 	base = input("Enter the base: ")
 	number_validator(base)
 	base = float(t)
@@ -56,7 +56,7 @@ def base_height():      #Working out rectangle, area of parallelogram, triangle
 	number_validator(height)
 	height = float(t)
 	return base, height
-	
+
 def radius():       #Working out circle
 	radius = input("Enter the radius: ")
 	number_validator(radius)
@@ -77,3 +77,36 @@ def adjacent_sides(): #Works out the area and perimeter of parallelograms
 	side_1 = float(t)
 
 	return base, side_1, height
+
+yesno = input("Run calculator? y/n: ")  #checks if input is yes or no
+yesno = yesno.lower()
+while yesno not in yn:
+	yesno = input("Invalid input, try again: ")
+	yesno = yesno.lower()
+
+n = 1
+
+while yesno == "y":
+	print("1: Triangle\n2: Rectangle\n3: Circle\n4: Parallelogram\n")
+	shape = input("Choose your shape 1/2/3/4: ")   #Asks user for the shape they want to check
+	while shape not in validate_1:
+		shape = input("Invalid input, try again: ")
+
+	unit = input("What unit are you working with mm/cm/m/km: ")    #Asks user for the unit they're working in
+	unit = unit.lower()
+
+	while unit not in unit_list:
+		unit = input("What unit are you working with mm/cm/m/km: ")
+		unit = unit.lower()
+
+	if shape == "1":    
+		ask = input("\n\nSelect what you want to work out\n1: Find area with base height"
+	            "\n2: Find area + perimeter with 2 sides + angle in between\n3: Find area + perimeter with 3 sides:\n")
+		while ask not in validate_2:
+			ask = input("Invalid input, try again: ")
+
+		if ask == "1": #Asks user for base and height to work out area when 1 is chosen
+			run, run_1 = base_height()
+			area = round((run*run_1/2), 2)
+			print("The area is", area, unit,"\u00b2")
+			shape_list["Triangle_area", n] = area, unit
